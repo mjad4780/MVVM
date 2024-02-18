@@ -1,8 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:untitled/presentation/resources/color_manager.dart';
-import 'package:untitled/presentation/resources/routes_manager.dart';
+import 'package:untitled/hello/presentation/resources/color_manager.dart';
 
 import '../resources/assets_manager.dart';
 import '../resources/constants_manager.dart';
@@ -22,7 +21,7 @@ class _SplashViewState extends State<SplashView> {
   }
 
   _goNext() {
-    Navigator.pushReplacementNamed(context, Routes.onBoardingRoute);
+    // Navigator.pushReplacementNamed(context, Routes.onBoardingRoute);
   }
 
   @override

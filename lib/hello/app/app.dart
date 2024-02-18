@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/presentation/onboarding/onboarding_view.dart';
-import 'package:untitled/presentation/resources/routes_manager.dart';
-import 'package:untitled/presentation/splash/splash_view.dart';
 
 class MyApp extends StatelessWidget {
   MyApp._internal(); //  واحد فقطinstanseفادنه هو named constructorيسمي هذا
@@ -15,8 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      onGenerateRoute: RouteGenerator.getRoute,
-      initialRoute: Routes.splashRoute,
+      // onGenerateRoute: RouteGenerator.getRoute,
+      // initialRoute: Routes.splashRoute,
     );
   }
 }

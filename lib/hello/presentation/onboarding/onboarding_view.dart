@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:untitled/presentation/resources/assets_manager.dart';
-import 'package:untitled/presentation/resources/color_manager.dart';
-import 'package:untitled/presentation/resources/strings_manager.dart';
+import 'package:untitled/hello/presentation/resources/assets_manager.dart';
+import 'package:untitled/hello/presentation/resources/color_manager.dart';
+import 'package:untitled/hello/presentation/resources/strings_manager.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({Key? key}) : super(key: key);
