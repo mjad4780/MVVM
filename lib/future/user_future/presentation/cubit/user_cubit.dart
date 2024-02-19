@@ -2,8 +2,10 @@ import 'package:data_connection_checker_tv/data_connection_checker.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitled/core/connection/network_info.dart';
+import 'package:untitled/core/databases/api/api_consumer.dart';
 import 'package:untitled/core/databases/api/dio_consumer.dart';
 import 'package:untitled/core/databases/cache/cache_helper.dart';
+import 'package:untitled/core/get_it/get_it.dart';
 import 'package:untitled/core/params/params.dart';
 import 'package:untitled/future/user_future/data/datasoures/user_local_data_source.dart';
 import 'package:untitled/future/user_future/data/datasoures/user_remote_data_source.dart';
@@ -18,9 +20,9 @@ class UserCubit extends Cubit<UserState> {
     emit(GetUserLoading());
     final failureOrUser = await GetUser(
       repository: UserRepositoryImpl(
-          remoteDataSource: UserRemoteDataSource(api: DioConsumer(dio: Dio())),
-          localDataSource: UserLocalDataSource(cache: CacheHelper()),
-          networkInfo: NetworkInfoImpl(DataConnectionChecker())),
+          remoteDataSource: getIt<UserRemoteDataSource>(),
+          localDataSource: getIt<UserLocalDataSource>(),
+          networkInfo: getIt<NetworkInfoImpl>()),
     ).call(
       params: UserParams(
         id: id.toString(),
